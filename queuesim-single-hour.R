@@ -1,28 +1,28 @@
+# Demonstrate Queue for a Single Hour
 
-##########single hour
-
-
-#set mu
+# set mu
 mu <- 1.5 # service rate (customer/minute)
 
-#set lambda randomly
+# set lambda randomly
 # for (i in 1:20) {
 #   lambda[i] <- runif(1,min=1.5, max=5)
 # }
 
-#manually input lamba
+# manually input lamba
 lambda <- c(.83,2.83) # arrival rate for half-hour intervals (customers/minute)
 
-#set hours to simulate
+# set hours to simulate
 hours = 1
 
-#set half-hour intervals (each half hour is 1800 seconds)
+# set half-hour intervals (each half hour is 1800 seconds)
 interval <- rep(1,(hours*2)+1)
+
 for (i in 1:length(interval)) {
   interval[i] <- (1800*i)-1800
 }
 
 #set queue duration
+
 t.end <- (3600*hours) # multiple total hours for simulation by number seconds in hour
 t.step = 1 # 1 second intervals
 
